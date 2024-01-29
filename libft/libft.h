@@ -1,40 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayprokop <ayprokop@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/27 18:41:33 by ayprokop          #+#    #+#             */
-/*   Updated: 2024/01/27 12:08:28 by ayprokop         ###   ########.fr       */
+/*   Created: 2023/12/13 20:23:36 by ayprokop          #+#    #+#             */
+/*   Updated: 2023/12/14 13:18:51 by ayprokop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#ifndef LIBFT_H
+# define LIBFT_H
 
 # include <unistd.h>
 # include <stdio.h>
 # include <ctype.h>
 # include <string.h>
 # include <stdlib.h>
-# include <stdarg.h>
-// # include "libft.h"
-# include "ft_printf.h"
-
-int		ft_printf_char(char c);
-int		ft_printf_str(char *str);
-int		ft_printf_deci(int n);
-int		ft_printf_unsigned(unsigned int n);
-char	*ft_utoa(unsigned int n);
-void	ft_strreverse(char str[], int str_len);
-int		ft_basetobase(unsigned long n, unsigned long base, char str[]);
-int		ft_printf_hex(unsigned long n);
-int		ft_printf_capitalhex(unsigned long n);
-int		ft_addrtohex(unsigned long long n, unsigned long long base, char str[]);
-int		ft_printf_addr(unsigned long long n);
-int		ft_getarg(va_list *ap, const char type);
-int		ft_printf(const char *format, ...);
 
 int		ft_atoi(const char *nptr);
 size_t	ft_strlen(const char *s);

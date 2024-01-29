@@ -6,50 +6,11 @@
 /*   By: ayprokop <ayprokop@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 18:39:32 by ayprokop          #+#    #+#             */
-/*   Updated: 2024/01/18 15:31:55 by ayprokop         ###   ########.fr       */
+/*   Updated: 2024/01/27 12:09:56 by ayprokop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-// #include "libft.h"
-#include <stdarg.h>
-// cspdiuxX%
-
-int	ft_printf_char(char c)
-{
-	ft_putchar_fd(c, 1);
-	return (1);
-}
-
-int	ft_printf_str(char *str)
-{
-	ft_putstr_fd(str, 1);
-	return (ft_strlen(str));
-}
-
-int	ft_printf_deci(int n)
-{
-	char	*str;
-
-	str = ft_itoa(n);
-	ft_putstr_fd(str, 1);
-	return (ft_strlen(str));
-}
-
-int	ft_printf_unsigned(unsigned int n)
-{
-	char	*str;
-
-	str = ft_itoa((unsigned int)n);
-	ft_putstr_fd(str, 1);
-	return (ft_strlen(str));
-}
-
-int	ft_printf_hex(unsigned long long)
-{
-	
-}
-
 
 int	ft_getarg(va_list *ap, const char type)
 {
@@ -67,11 +28,11 @@ int	ft_getarg(va_list *ap, const char type)
 	else if (type == 'u')
 		count += ft_printf_unsigned(va_arg(*ap, unsigned int));
 	else if (type == 'x')
-		count += 0;
+		count += ft_printf_hex(va_arg(*ap, unsigned int));
 	else if (type == 'X')
-		count += 0;
+		count += ft_printf_capitalhex(va_arg(*ap, unsigned int));
 	else if (type == 'p')
-		count += 0;
+		count += ft_printf_addr(va_arg(*ap, unsigned long long));
 	return (count);
 }
 
@@ -92,22 +53,23 @@ int	ft_printf(const char *format, ...)
 			count += ft_getarg(&ap, format[i]);
 			i++;
 		}
-		ft_putchar_fd(format[i], 1);
-		count++;
-		i++;
+		else
+		{
+			ft_putchar_fd(format[i], 1);
+			count++;
+			i++;
+		}
 	}
 	va_end(ap);
 	return (count);
 }
 
-int	main(void)
-{
-	int	x = 5000;
-	unsigned int y = 600;
-	char str[] = "tomorrow";
-	int i = printf("%x %u %d %c %s %%\n", 123, y, 5000, 'k', "wowowo");
-	int j = ft_printf("%u %d %c %s %%\n", y, 5000, 'k', "vovovo");
-	printf("%d\n", i);
-	printf("%d\n", j);
-	return (0);
-}
+// int	main(void)
+// {
+// 	int	x = 100000;
+// 	int i = printf();
+// 	int j = ft_printf(" %x \n", 0);
+// 	printf("%d\n", i);
+// 	printf("%d\n", j);
+// 	return (0);
+// }
