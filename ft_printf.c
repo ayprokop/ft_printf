@@ -6,13 +6,34 @@
 /*   By: ayprokop <ayprokop@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 18:39:32 by ayprokop          #+#    #+#             */
-/*   Updated: 2024/01/27 12:09:56 by ayprokop         ###   ########.fr       */
+/*   Updated: 2024/03/12 17:36:41 by ayprokop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
 int	ft_getarg(va_list *ap, const char type)
+{
+	int	count;
+
+	count = 0;
+	if (type == '%')
+		count += ft_printf_char('%');
+	else if (type == 'c')
+		count += ft_printf_char(va_arg(*ap, int));
+	else if (type == 's')
+		count += ft_printf_str(va_arg(*ap, char *));
+	else if (type == 'd' || type == 'i')
+		count += ft_printf_deci(va_arg(*ap, int));
+	else if (type == 'u')
+		count += ft_printf_unsigned(va_arg(*ap, unsigned int));
+	else if (type == 'x' || type == 'X')
+		count += ft_printf_hex(va_arg(*ap, unsigned int), type);
+	else if (type == 'p')
+		count += ft_printf_addr(va_arg(*ap, unsigned long));
+	return (count);
+}
+
 {
 	int	count;
 
