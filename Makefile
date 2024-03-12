@@ -6,7 +6,7 @@
 #    By: ayprokop <ayprokop@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/02 15:18:48 by ayprokop          #+#    #+#              #
-#    Updated: 2024/01/29 12:18:12 by ayprokop         ###   ########.fr        #
+#    Updated: 2024/03/12 17:26:51 by ayprokop         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,7 @@ CFLAGS = -Werror -Wextra -Wall
 RM = rm -f
 NAME = libftprintf.a
 OBJS = ft_printf_char.o ft_printf_str.o ft_printf_deci.o ft_printf_unsigned.o \
-		ft_strreverse.o ft_basetobase.o ft_printf_hex.o ft_printf_capitalhex.o \
-		ft_printf.o ft_addrtohex.o ft_printf_addr.o ft_utoa.o
+		ft_strreverse.o ft_printf_hex.o ft_printf.o ft_printf_addr.o ft_utoa.o
 
 #生成規則
 all: $(NAME)
