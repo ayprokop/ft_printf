@@ -6,19 +6,17 @@
 /*   By: ayprokop <ayprokop@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 15:06:30 by ayprokop          #+#    #+#             */
-/*   Updated: 2024/03/12 17:31:26 by ayprokop         ###   ########.fr       */
+/*   Updated: 2024/03/13 15:16:46 by ayprokop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 // #include <unistd.h>
 
-
-void	ft_putchar_fd(char c, int fd)
-{
-	write(fd, &c, 1);
-}
-
+// int	ft_putchar_fd(char c, int fd)
+// {
+// 	write(fd, &c, 1);
+// }
 
 int	ft_len_of_hex(unsigned int n)
 {
@@ -56,7 +54,7 @@ void	ft_put_hex(unsigned int n, const char type)
 	
 }
 
-int	ft_print_hex(unsigned int n, const char type)
+int	ft_printf_hex(unsigned int n, const char type)
 {
 
 	if (n == 0)
