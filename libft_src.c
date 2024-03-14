@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   libft_src.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayprokop <ayprokop@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/13 16:36:02 by ayprokop          #+#    #+#             */
-/*   Updated: 2023/12/14 15:13:24 by ayprokop         ###   ########.fr       */
+/*   Created: 2024/03/14 16:15:12 by ayprokop          #+#    #+#             */
+/*   Updated: 2024/03/14 16:24:43 by ayprokop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 static int	ft_nlen(long long num)
 {
@@ -61,46 +61,23 @@ char	*ft_itoa(int n)
 	return (nbr);
 }
 
-// static size_t	get_digits(int n)
-// {
-// 	size_t	i;
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
+}
 
-// 	i = 1;
-// 	while (n /= 10)
-// 		i++;
-// 	return (i);
-// }
+void	ft_putstr_fd(char *s, int fd)
+{
+	while (*s)
+		write(fd, s++, 1);
+}
 
-// char	*ft_itoa(int n)
-// {
-// 	char	*str_num;
-// 	size_t	digits;
-// 	long long	num;
+size_t	ft_strlen(const char *s)
+{
+	size_t	i;
 
-// 	num = n;
-// 	digits = get_digits(n);
-// 	if (n < 0)
-// 	{
-// 		num *= -1;
-// 		digits++;
-// 	}
-// 	str_num = (char *)malloc(sizeof(char) * (digits + 1));
-// 	if (!str_num)
-// 		return (NULL);
-// 	*(str_num + digits) = 0;
-// 	while (digits--)
-// 	{
-// 		*(str_num + digits) = num % 10;
-// 		num = num / 10;
-// 	}
-// 	if (n < 0)
-// 		*(str_num + 0) = '0';
-// 	return (str_num);
-// }
-
-// int	main(void)
-// {
-// 	// ft_itoa(2147483647);
-// 	printf("%s\n", ft_itoa(-2147483648));
-// 	return (0);
-// }
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
+}

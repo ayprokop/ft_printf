@@ -6,39 +6,40 @@
 #    By: ayprokop <ayprokop@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/02 15:18:48 by ayprokop          #+#    #+#              #
-#    Updated: 2024/03/14 08:20:19 by ayprokop         ###   ########.fr        #
+#    Updated: 2024/03/14 16:46:41 by ayprokop         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #マクロ定義
-CC = cc
-CFLAGS = -Werror -Wextra -Wall
-RM = rm -f
+
 NAME = libftprintf.a
-OBJS = ft_printf_char.o ft_printf_str.o ft_printf_deci.o ft_printf_unsigned.o \
-		ft_printf_hex.o ft_printf.o ft_utoa.o ft_hextoa.o \
-		ft_printf_hexcapital.o ft_printf_addr.o ft_addrtoa.o
+
+CC = cc
+
+CFLAGS = -Werror -Wextra -Wall
+
+RM = rm -f
+
+SRC = ft_printf_char.c ft_printf_str.c ft_printf_deci.c ft_printf_unsigned.c \
+		ft_printf_hex.c ft_printf.c ft_utoa.c ft_hextoa.c \
+		ft_printf_hexcapital.c ft_printf_addr.c ft_addrtoa.c\
+		libft_src.c\
+
+OBJS = $(SRC:.c=.o)
 
 #生成規則
-all: $(NAME)
 
-$(NAME) : libft.a obj/$(OBJS)
-	cp ./libft/libft.a libftprintf.a
-	ar rc $@ $(OBJS)
-	
-obj/$(OBJS) : $(OBJS:.o=.c)
-	$(CC) -c $(OBJS:.o=.c)
-	
-libft.a : 
-	make -C libft
+all : $(NAME)
 
-obj :
-	mkdir -p obj
-	
+$(NAME) : $(OBJS)
+	ar rc $(NAME) $(OBJS)
+
 clean :
-	$(RM) $(OBJS) $(OBJS_LIBFT)
+	$(RM) $(OBJS)
+
 fclean : clean
 	$(RM) $(NAME)
+	
 re : fclean all
 
 .PHONY : all clean fclean re
