@@ -6,7 +6,7 @@
 #    By: ayprokop <ayprokop@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/02 15:18:48 by ayprokop          #+#    #+#              #
-#    Updated: 2024/03/14 16:46:41 by ayprokop         ###   ########.fr        #
+#    Updated: 2024/03/14 16:58:42 by ayprokop         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,8 +22,8 @@ RM = rm -f
 
 SRC = ft_printf_char.c ft_printf_str.c ft_printf_deci.c ft_printf_unsigned.c \
 		ft_printf_hex.c ft_printf.c ft_utoa.c ft_hextoa.c \
-		ft_printf_hexcapital.c ft_printf_addr.c ft_addrtoa.c\
-		libft_src.c\
+		ft_printf_hexcapital.c ft_printf_addr.c ft_addrtoa.c \
+		libft_src.c \
 
 OBJS = $(SRC:.c=.o)
 
