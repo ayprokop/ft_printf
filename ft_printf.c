@@ -6,7 +6,7 @@
 /*   By: ayprokop <ayprokop@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 18:39:32 by ayprokop          #+#    #+#             */
-/*   Updated: 2024/03/14 12:02:26 by ayprokop         ###   ########.fr       */
+/*   Updated: 2024/03/14 12:52:21 by ayprokop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,3 +63,9 @@ int	ft_printf(const char *format, ...)
 	va_end(ap);
 	return (count);
 }
+
+// int	main(void)
+// {
+// 	printf("\001\002\007\v\010\f\r\n"):
+// 	return (0);
+// }

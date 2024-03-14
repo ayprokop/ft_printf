@@ -6,7 +6,7 @@
 /*   By: ayprokop <ayprokop@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 15:06:30 by ayprokop          #+#    #+#             */
-/*   Updated: 2024/03/14 12:03:14 by ayprokop         ###   ########.fr       */
+/*   Updated: 2024/03/14 12:47:12 by ayprokop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int	ft_printf_addr(unsigned long n)
 	if (n == 0)
 	{
 		ft_putstr_fd("0x0", 1);
+		free(str);
 		return (3);
 	}
 	else
