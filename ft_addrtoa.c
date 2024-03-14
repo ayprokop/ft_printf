@@ -6,7 +6,7 @@
 /*   By: ayprokop <ayprokop@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 16:36:02 by ayprokop          #+#    #+#             */
-/*   Updated: 2024/03/14 08:19:10 by ayprokop         ###   ########.fr       */
+/*   Updated: 2024/03/14 12:00:34 by ayprokop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ static int	ft_nlen(unsigned long num)
 
 char	*ft_addrtoa(unsigned long n)
 {
-	char		*nbr;
+	char			*nbr;
 	unsigned long	num;
-	int			len_nbr;
-	char		*base;
+	int				len_nbr;
+	char			*base;
 
 	base = "0123456789abcdef";
 	num = n;
