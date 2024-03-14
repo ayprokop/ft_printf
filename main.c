@@ -1,16 +1,5 @@
 #include <stdio.h>
 #include "ft_printf.h"
-// int	main(void)
-// {
-// 	char *p;
-// 	char a;
-// 	p = &a;
-// 	printf("%lu\n", sizeof(size_t));
-// 	printf("%lu\n", sizeof(unsigned long long));
-// 	printf("%lu\n", sizeof(unsigned int));
-// 	printf("%lu\t%lu\n", sizeof(p), sizeof(&a));
-// 	return (0);
-// }
 
 int main() {
     int printedChars;
@@ -51,6 +40,15 @@ int main() {
     printf("printf procent :%%\n");
     ft_printf("ft_printf string without flags\n");
     printf("printf string without flags\n");
-
+    int x = 0;
+    int *p;
+    p = &x;
+    ft_printf("%p\n", &x);
+    printf("%p\n", &x);
+    ft_printf("%p\n", p);
+    printf("%p\n", p);
+    ft_printf("%p\n", &p);
+    printf("%p\n", &p);
+    
     return 0;
 }

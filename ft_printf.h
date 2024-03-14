@@ -6,7 +6,7 @@
 /*   By: ayprokop <ayprokop@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 18:41:33 by ayprokop          #+#    #+#             */
-/*   Updated: 2024/03/13 15:10:34 by ayprokop         ###   ########.fr       */
+/*   Updated: 2024/03/14 08:14:41 by ayprokop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,12 @@ int		ft_printf_str(char *str);
 int		ft_printf_deci(int n);
 int		ft_printf_unsigned(unsigned int n);
 char	*ft_utoa(unsigned int n);
-int		ft_printf_hex(unsigned int n, const char type);
-void	ft_put_hex(unsigned int n, const char type);
-int		ft_len_of_hex(unsigned int n);
+int		ft_printf_hex(unsigned int n);
+char	*ft_hextoa(unsigned int n);
+int		ft_printf_hexcapital(unsigned int n);
+
+int		ft_printf_addr(unsigned long n);
+char	*ft_addrtoa(unsigned long n);
 
 int		ft_getarg(va_list *ap, const char type);
 int		ft_printf(const char *format, ...);
